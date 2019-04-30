@@ -18,13 +18,12 @@ public class GeoRunner {
 	public static void main(String[] args) {
 		new GeoRunner();
 	}
-//asdfasdlkfjal;sdfjlfs;dkhello
-	//test 2
-	
-	
+
+	// TEST - 3 - ULTIMATE_TESTER_X
+//TEST- LASTTSET;
 	private void start() {
 		JFrame frame = new JFrame("Geometry Dash");
-		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		// frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		panel = new JPanel() {
 			@Override
 			public void paintComponent(Graphics g) {
