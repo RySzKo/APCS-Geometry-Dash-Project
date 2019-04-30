@@ -19,8 +19,7 @@ public class GeoRunner {
 		new GeoRunner();
 	}
 
-	// TEST - 3 - ULTIMATE_TESTER_X
-//TEST- LASTTSET;
+
 	private void start() {
 		JFrame frame = new JFrame("Geometry Dash");
 		// frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
