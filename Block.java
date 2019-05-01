@@ -8,5 +8,7 @@ public class Block {
 		public Block(int speed, int camy) {
 			speed = speed;
 			camy = camy;
+			
+			
 		}
 }
