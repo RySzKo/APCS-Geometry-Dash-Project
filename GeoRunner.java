@@ -2,7 +2,7 @@ import java.awt.*;
 import java.util.*;
 import javax.swing.*;
 
-//TEST BY MIKE1
+//TEST BY MIKE22
 public class GeoRunner {
 	private JPanel panel;
 	private GeoDashGame game = new GeoDashGame();
