@@ -4,4 +4,9 @@ import javax.swing.*;
 
 public class Triangle extends Obstacle{
 
+	public Triangle(int xspeed) {
+		super(xspeed);
+		// TODO Auto-generated constructor stub
+	}
+
 }
