@@ -1,10 +1,12 @@
-import java.awt.Rectangle;
+import java.awt.*;
+import java.util.*;
+import javax.swing.*;
 
-public class Block {
+public class Block extends Obstacle{
 
-		private int dx, dy, xloc, yloc;
-		private Rectangle hit;
-		
-		public Block(int speed, int camy) {
-		}
+	private int dx, dy, xloc, yloc;
+	private Rectangle hit;
+
+	public Block(int speed, int camy) {
+	}
 }

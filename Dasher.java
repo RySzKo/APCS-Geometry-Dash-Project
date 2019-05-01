@@ -1,4 +1,6 @@
-import java.awt.Rectangle;
+import java.awt.*;
+import java.util.*;
+import javax.swing.*;
 
 public class Dasher {
 
