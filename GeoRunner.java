@@ -1,10 +1,8 @@
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Toolkit;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.*;
+import javax.swing.*;
 
 public class GeoRunner {
 	private JPanel panel;
@@ -25,6 +23,7 @@ public class GeoRunner {
 			public void paintComponent(Graphics g) {
 				super.paintComponent(g);
 				drawGame(g);
+				panel.repaint();
 			}
 			
 		};
@@ -37,7 +36,20 @@ public class GeoRunner {
 		frame.setVisible(true);
 		
 		panel.requestFocusInWindow();
-		
+		panel.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent me) {
+				clickedAt(me);
+				panel.repaint();
+			}
+		});
+
+	}
+
+
+	protected void clickedAt(MouseEvent me) {
+		game.move();
+		System.out.println("Click Works");
 	}
 
 

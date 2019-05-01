@@ -1,7 +1,21 @@
 /Dasher.class
 /GeoDashGame.class
+<<<<<<< HEAD
+/GeoRunner.class
+/GeoRunner$1.class
+=======
 /GeoRunner$1.class
 /GeoRunner.class
 /Block.class
+<<<<<<< HEAD
+>>>>>>> branch 'master' of https://github.com/RySzKo/APCS-Geometry-Dash-Project.git
+=======
 /Background.class
 /Obstacle.class
+<<<<<<< HEAD
+/Triangle.class
+/Rectangle.class
+=======
+>>>>>>> branch 'master' of https://github.com/RySzKo/APCS-Geometry-Dash-Project.git
+>>>>>>> branch 'master' of https://github.com/RySzKo/APCS-Geometry-Dash-Project.git
+/GeoRunner$2.class

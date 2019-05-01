@@ -10,10 +10,23 @@ public class GeoDashGame {
 	public GeoDashGame() {
 		player = new Dasher();
 	}
+	
 
 	public void draw(Graphics g) {
 		player.draw(g);
-		
+		for(Obstacle ob: obstacles) {
+			ob.draw(g);
+		}
+	}
+	
+	public void move() {
+		player.move(-10);
+		for(Obstacle ob: obstacles) {
+			ob.move();
+		}
 	}
 
+	
+	
+	
 }
