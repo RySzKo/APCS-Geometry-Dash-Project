@@ -1,9 +1,12 @@
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 
 public class GeoRunner {
 	private JPanel panel;
@@ -35,7 +38,34 @@ public class GeoRunner {
 			private void drawGame(Graphics g) {
 
 			}
+			
+			
+			panel.requestFocusInWindow();
+			
+			// this timer controls the actions in the game and then repaints after each update to data
+			timer = new Timer(REFRESH_RATE, new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+					updateGame();
+					panel.repaint();
+				}
+			});
+			timer.start();
+		}
+
+		// this method is called every time the timer goes off (which right now is every 10 milliseconds = 100 times per second
+		protected void updateGame() {
+			ticks++;// keeps track of the number of times the timer has gone off
+			game.moveObjects();
+			int hurts = 1000/REFRESH_RATE;
+			if(ticks %hurts == 0) {
+				System.out.println(ticks/hurts+" seconds");
+			}
+		}
 
 		};
 	}
+	
+	
+	
 }
