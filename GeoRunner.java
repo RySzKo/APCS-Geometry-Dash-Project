@@ -18,6 +18,7 @@ public class GeoRunner {
 
 	public static void main(String[] args) {
 		new GeoRunner();
+		
 	}
 
 
@@ -37,6 +38,9 @@ public class GeoRunner {
 		frame.add(panel);
 		frame.pack();
 		frame.setVisible(true);
+		
+		panel.requestFocusInWindow();
+		
 	}
 
 
