@@ -8,12 +8,17 @@ public class Dasher {
 	private int yval;
 
 	public Dasher() {
-		yval = 450;
-		Rectangle rect = new Rectangle(xval, yval, dasherdim, dasherdim);
+		yval = 500;
+		rect = new Rectangle(xval, yval, dasherdim, dasherdim);
 	}
 	
 	public void draw(Graphics g) {
-		g.drawRect(xval, yval, dasherdim, dasherdim);
-		g.fillRect(xval, yval, dasherdim, dasherdim);
+		g.drawRect(rect.x, rect.y, dasherdim, dasherdim);
+		g.fillRect(rect.x, rect.y, dasherdim, dasherdim);
+	}
+	
+	public void move(int y) {
+		rect.translate(0, y);
+		System.out.println("Move Works");
 	}
 }
