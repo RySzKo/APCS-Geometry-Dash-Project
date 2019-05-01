@@ -38,6 +38,8 @@ public class GeoRunner {
 
 
 	protected void drawGame(Graphics g) {
+		g.drawLine(0, 500, 2000, 500);
+
 		game.draw(g);
 	}
 }

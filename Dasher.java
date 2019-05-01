@@ -8,7 +8,7 @@ public class Dasher {
 	private int yval;
 
 	public Dasher() {
-		yval = 100;
+		yval = 450;
 		Rectangle rect = new Rectangle(xval, yval, dasherdim, dasherdim);
 	}
 	
