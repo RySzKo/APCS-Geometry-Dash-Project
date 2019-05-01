@@ -42,6 +42,6 @@ public class GeoRunner {
 
 
 	protected void drawGame(Graphics g) {
-		
+		game.draw(g);
 	}
 }
