@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Toolkit;
@@ -22,18 +23,24 @@ public class GeoRunner {
 
 	private void start() {
 		JFrame frame = new JFrame("Geometry Dash");
-		// frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		panel = new JPanel() {
 			@Override
 			public void paintComponent(Graphics g) {
 				super.paintComponent(g);
 				drawGame(g);
 			}
-
-			private void drawGame(Graphics g) {
-
-			}
-
 		};
+		panel.setBackground(Color.BLUE);
+		panel.setPreferredSize(new Dimension(800, 600));
+		
+		frame.add(panel);
+		frame.pack();
+		frame.setVisible(true);
+	}
+
+
+	protected void drawGame(Graphics g) {
+		
 	}
 }

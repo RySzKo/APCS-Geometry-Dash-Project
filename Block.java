@@ -6,6 +6,5 @@ public class Block {
 		private Rectangle hit;
 		
 		public Block(int speed, int camy) {
-			
 		}
 }
