@@ -48,6 +48,7 @@ public class GeoRunner {
 			public void actionPerformed(ActionEvent arg0) {
 				updateGame();
 				panel.repaint();
+				
 			}
 		});
 		timer.start();

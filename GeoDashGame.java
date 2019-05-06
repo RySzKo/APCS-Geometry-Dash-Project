@@ -61,6 +61,9 @@ public class GeoDashGame {
 	public void moveObjects() {
 		for(Obstacle ob: obstacles) {
 			ob.moveObjects();
+			triangle.move();
+			
+			
 		}
 	}
 

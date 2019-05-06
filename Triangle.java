@@ -21,7 +21,7 @@ public class Triangle extends Obstacle{
 	
 	@Override
 	public void move() {
-		hitbox.translate(-100, 0);
+		hitbox.translate(xloc-100, yloc);
 		System.out.println("Triangle move()...");
 	}
 	
