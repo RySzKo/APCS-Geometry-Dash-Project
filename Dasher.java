@@ -1,7 +1,8 @@
+import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-public class Dasher {
+public class Dasher extends Component {
 
 	private Rectangle rect;
 	private final int xval = 100, dasherdim = 50;
@@ -10,6 +11,7 @@ public class Dasher {
 	public Dasher() {
 		yval = 450;
 		rect = new Rectangle(xval, yval, dasherdim, dasherdim);
+		System.out.println("dasher is made");
 	}
 	
 	public void draw(Graphics g) {

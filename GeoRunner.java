@@ -9,6 +9,7 @@ public class GeoRunner {
 
 	public static void main(String[] args) {
 		new GeoRunner().start();
+
 	}
 
 	private void start() {
@@ -40,5 +41,4 @@ public class GeoRunner {
 
 		game.draw(g);
 	}
-	
 }
