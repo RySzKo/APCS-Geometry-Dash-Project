@@ -72,6 +72,7 @@ private void mapKeyStrokesToActions(JPanel panel) {
 	
 	inMap.put(KeyStroke.getKeyStroke("pressed UP"), "up");
 	inMap.put(KeyStroke.getKeyStroke("pressed W"), "up");
+	System.out.println("i hit up");
 	
 	map.put("up", new AbstractAction() {
 		@Override
