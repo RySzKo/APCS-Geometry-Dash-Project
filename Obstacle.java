@@ -2,13 +2,13 @@ import java.awt.*;
 import java.util.*;
 import javax.swing.*;
 public abstract class Obstacle {
-	
+	//update by Devang
 	private Rectangle hitbox;
-	int xloc=500, yloc=500, width=50, height=50;
+	int xloc=600, yloc=450, width=50, height=50;
 	
 	public Obstacle(int xspeed, String str) {
 		xspeed = 100;
-		hitbox = new Rectangle(xloc, xloc, width, height);
+		hitbox = new Rectangle(xloc, yloc, width, height);
 	}
 
 	public void move() {
@@ -16,7 +16,7 @@ public abstract class Obstacle {
 	}
 
 	public void draw(Graphics g) {
-		g.drawRect(xloc, xloc, width, height);
+		g.drawRect(xloc, yloc, width, height);
 	}
 
 }
