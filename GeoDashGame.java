@@ -20,88 +20,37 @@ public class GeoDashGame {
 	private ArrayList<Obstacle> triangles = new ArrayList<>();
 	private ArrayList<Obstacle> blocks = new ArrayList<>();
 
-	private Dasher player;
+	Dasher player;
 	Obstacle triangle, block;
-//	Block block;
-	
+	//	Block block;
+
 	public GeoDashGame() {
-		player = new Dasher();
-		
+		player = new Dasher(null);
+
 		//Devang: created and added obstacles
 		triangle = new Triangle(10, null);
 		obstacles.add(triangle);
-		
+
 		block = new Block(10, null);
 		obstacles.add(block);
 	}
-	
-//	public void draw() {
-//		player.draw(g);
-//		// create the panel
-//		panel = new JPanel();
-//		JFrame frame = new JFrame("Geometry Dash");
-//		
-//		// set panel properties, e.g., color, size, etc.
-//		panel.setBackground(Color.BLUE);
-//		panel.setPreferredSize(new Dimension(800, 600));
-//		frame.add(panel);
-//		frame.pack();
-//		frame.setVisible(true);
-//		panel.requestFocusInWindow();
-//		
-//		this.graphics = panel.getGraphics();
-//
-//		// add various components of the game:
-//		//    - player
-//		//    - 1st obstacle
-////		Dasher dasher = new Dasher();
-////		Triangle traingle = new Triangle(10, null);
-//		panel.add(player);
-//		panel.add(triangle);
-//		
-//		
-//		// draw various components
-//		
-//		// line
-//		graphics.drawLine(0, 500, 2000, 500);
-//
-//		// player & other obstacles
-		
-	//}
-		
-		
+
+	//	
+	public void keyHit(String s) {
+		System.out.println("GeoDash (keyHit): "+s);
+
+	}
+
 	public void draw(Graphics g) {
 		player.draw(g);
 		for(Obstacle ob: obstacles) {
 			ob.draw(g);
 		}
+	}
 
 
-//		int x = 600;
-//		for(int i = 0; i<5; i++) {
-//		a.draw(g, x, 450);
-//		x-=200;
-//		TimeUnit.SECONDS.sleep(1);
-//
-//		b.draw(g, x, 450);
-		//triangle.move(g, x, 450);
 
-//		g.clearRect(x+100, 450, 51, 50);
-//		g.setColor(Color.BLUE);
-//		g.fillRect(x+100, 450, 51, 50);
-	//	Thread.sleep(1000);
 
-		//triangle.draw(g, 400, 450);
-		//g.clearRect(500, 450, 51, 50);
-		//g.setColor(Color.BLUE);
-		//g.fillRect(500, 450, 51, 50);
-		
-		}
-		
-		//triangle.draw(g, 400, 450);
-
-	
-	
 	public void move() {
 		player.move(-10);
 		for(Obstacle ob: obstacles) {
@@ -109,7 +58,13 @@ public class GeoDashGame {
 		}
 	}
 
+	public void moveObjects() {
+		for(Obstacle ob: obstacles) {
+			ob.moveObjects();
+		}
+	}
 
-	
-	
+
+
+
 }
