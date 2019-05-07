@@ -4,15 +4,15 @@ import javax.swing.*;
 public abstract class Obstacle {
 	
 	private Rectangle hitbox;
-	int xloc, yloc, width, height;
+	int xloc, yloc, width, height, speed;
 	
 	public Obstacle(int xspeed) {
-		xspeed = 100;
+		speed = xspeed;
 		hitbox = new Rectangle(500, 500, 50, 50);
 	}
 
 	public void move() {
-		hitbox.translate(100, 0);
+		hitbox.translate(speed, 0);
 	}
 
 	public void draw(Graphics g) {

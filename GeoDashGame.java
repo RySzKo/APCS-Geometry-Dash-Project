@@ -6,9 +6,11 @@ public class GeoDashGame {
 	private ArrayList<Obstacle> obstacles = new ArrayList<>();
 	
 	private Dasher player;
+	private Obstacle ob1;
 	
 	public GeoDashGame() {
 		player = new Dasher();
+		ob1 = new Block(-10);
 	}
 	
 
@@ -20,13 +22,14 @@ public class GeoDashGame {
 	}
 	
 	public void move() {
-		player.move(-10);
 		for(Obstacle ob: obstacles) {
 			ob.move();
 		}
 	}
 
-	
+	public void movePlayer(int y) {
+		player.move(y);
+	}
 	
 	
 }
