@@ -18,6 +18,7 @@
 =======
 >>>>>>> branch 'master' of https://github.com/RySzKo/APCS-Geometry-Dash-Project.git
 >>>>>>> branch 'master' of https://github.com/RySzKo/APCS-Geometry-Dash-Project.git
+<<<<<<< HEAD
 /LevelReader.class
 /GeoDashGame$1.class
 /testClass.class
@@ -31,3 +32,6 @@
 /GeoRunner$6.class
 /PlayerControledDasher.class
 /PlayerControlledObject.class
+=======
+/GeoRunner$2.class
+>>>>>>> branch 'master' of https://github.com/RySzKo/APCS-Geometry-Dash-Project.git

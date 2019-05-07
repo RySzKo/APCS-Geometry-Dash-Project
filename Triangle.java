@@ -3,12 +3,10 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Rectangle;
 
-
 public class Triangle extends Obstacle{
 	
 	private Rectangle hitbox;
 	int xloc =600, yloc = 450, width=50, height=50;
-
 
 	public Triangle(int xSpeed, Image i) {
 		super(xSpeed, "triangle.png");

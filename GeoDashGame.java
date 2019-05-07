@@ -40,14 +40,17 @@ public class GeoDashGame {
 		System.out.println("GeoDash (keyHit): "+s);
 
 	}
+	
 
 	public void draw(Graphics g) {
 		player.draw(g);
 		for(Obstacle ob: obstacles) {
 			ob.draw(g);
+			}
 		}
-	}
 
+	
+	
 
 
 
@@ -61,7 +64,7 @@ public class GeoDashGame {
 	public void moveObjects() {
 		for(Obstacle ob: obstacles) {
 			ob.moveObjects();
-			triangle.move();
+			//triangle.move();
 			
 			
 		}

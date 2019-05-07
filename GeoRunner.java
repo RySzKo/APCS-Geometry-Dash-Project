@@ -56,7 +56,7 @@ public class GeoRunner {
 
 	
 protected void updateGame() {
-	ticks++;// keeps track of the number of times the timer has gone off
+	ticks++;
 	game.moveObjects();
 	int hurts = 1000/REFRESH_RATE;
 	if(ticks %hurts == 0) {

@@ -22,6 +22,8 @@ public class Dasher extends Component {
 		g.fillRect(rect.x, rect.y, dasherdim, dasherdim);
 	}
 	
+	
+	
 	public void move(int y) {
 		rect.translate(0, y);
 		System.out.println("Move Works");
