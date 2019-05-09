@@ -1,7 +1,10 @@
 import java.awt.Component;
+
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import java.util.concurrent.TimeUnit;
 
+import javax.swing.AbstractAction;
 import javax.swing.ActionMap;
 
 public class Dasher extends Component {
@@ -25,10 +28,15 @@ public class Dasher extends Component {
 	
 	
 	public void move(int y) {
-		rect.translate(0, y);
+		rect.translate(0, y-50);
 		System.out.println("Move Works");
-	}
+		moveDown(y);
+		//rect.translate(0, -(y-50));
+		//Thread.sleep(1000);
 
+		//rect.translate(0, -(y-50));
+	}
+	
 	public void moveUp(){
 	rect.translate(0,(int) (-rect.getWidth()));
 	System.out.println("MoveUp Works");
@@ -36,9 +44,14 @@ public class Dasher extends Component {
 
 
 
-public void moveDown(){
-	rect.translate(0, (int) (rect.getWidth()+1));
+public void moveDown(int y){
+	
+
+	//rect.translate(0, -(y-50));
+	//rect.translate(0, (int) (rect.getWidth()+1));
 	System.out.println("MoveDown Works");
+
+	//rect.translate(0, -(y-50));
 }
 
 public void moveRight() {

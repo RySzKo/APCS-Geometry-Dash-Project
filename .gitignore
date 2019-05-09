@@ -27,6 +27,7 @@
 /TestClass$1.class
 /GeoRunner$2.class
 /GeoRunner$3.class
+<<<<<<< HEAD
 /GeoRunner$4.class
 /GeoRunner$5.class
 /GeoRunner$6.class
@@ -35,3 +36,7 @@
 =======
 /GeoRunner$2.class
 >>>>>>> branch 'master' of https://github.com/RySzKo/APCS-Geometry-Dash-Project.git
+=======
+>>>>>>> branch 'master' of https://github.com/RySzKo/APCS-Geometry-Dash-Project.git
+/GeoRunner$7.class
+/GeoRunner$8.class
