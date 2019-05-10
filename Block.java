@@ -10,6 +10,7 @@ public class Block extends Obstacle {
 	int yval = 450;
 	int bx = 10;
 	int by = 10;
+	int a = 0;
 
 	public void draw(Graphics g) {
 		g.drawRect(xval, yval, bx, by);
