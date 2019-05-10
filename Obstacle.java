@@ -53,7 +53,8 @@ public abstract class Obstacle {
 	
 
 	public void moveObjects() {
-		this.hitbox.translate(0, -50);
+		//this.hitbox.translate(0, -50);
+		
 	}
 
 
