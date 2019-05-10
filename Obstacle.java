@@ -4,19 +4,43 @@ import javax.swing.*;
 public abstract class Obstacle {
 	
 	private Rectangle hitbox;
-	int xloc, yloc, width, height, speed;
+	private int xloc;
+	private int yloc;
+	private int width;
+	private int height;
+	private int speed;
+	private final int dim = 50;
 	
-	public Obstacle(int xspeed) {
+	public Obstacle(int x, int y, int xspeed) {
+		xloc = x;
+		yloc = y;
 		speed = xspeed;
-		hitbox = new Rectangle(500, 500, 50, 50);
+		hitbox = new Rectangle(xloc, yloc, getDim(), getDim());
 	}
 
 	public void move() {
 		hitbox.translate(speed, 0);
 	}
+	
+	public Rectangle getRect() {
+		return hitbox;
+	}
 
+	public int getDim() {
+		return dim;
+	}
+	
+	public int getX() {
+		return xloc;
+	}
+	
+	public int getY() {
+		return yloc;
+	}
+	
 	public void draw(Graphics g) {
-		g.drawRect(500, 500, 50, 50);
+		g.drawRect(xloc, yloc, 50, 50);
+		g.fillRect(xloc, yloc, 50, 50);
 	}
 
 }

@@ -4,11 +4,10 @@ import javax.swing.*;
 
 public class Block extends Obstacle {
 	// UPDATE BY MIKE
-	private int dx, dy, xloc, yloc;
 	private Rectangle hit;
-		public Block(int xspeed) {
-		super(xspeed);
-		// TODO Auto-generated constructor stub
+		public Block(int x, int y, int xspeed) {
+		super(x, y, xspeed);
+		hit = super.getRect();
 	}
-
+		
 }

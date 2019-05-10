@@ -5,7 +5,7 @@ public class Dasher {
 
 	private Rectangle rect;
 	private final int xval = 100, dasherdim = 50;
-	private int yval;
+	private int yval, seconds;
 
 	public Dasher() {
 		yval = 450;
@@ -17,8 +17,14 @@ public class Dasher {
 		g.fillRect(rect.x, rect.y, dasherdim, dasherdim);
 	}
 	
-	public void move(int y) {
-		rect.translate(0, y);
-		System.out.println("Move Works");
+	public Rectangle getRect() {
+		return rect;
 	}
+	
+	public void move(double gravity) {
+		rect.translate(0, (int) gravity);
+		System.out.println("Moved " + gravity);
+	}
+	
+	
 }
