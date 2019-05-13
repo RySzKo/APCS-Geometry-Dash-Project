@@ -3,15 +3,32 @@ import java.util.*;
 import javax.swing.*;
 
 public class Block extends Obstacle {
+
+	Block b;
+	// NEXT FOUR LINES WILL BE DELETED EVENTUALLY
+	int xval = 10;
+	int yval = 450;
+	int width = 10;
+	int by = 10;
+	int a = 0;
+
+	public void draw(Graphics g) {
+		//g.drawRect(xval, yval, bx, by);
+	//	g.drawImage(image,xloc, yloc,width, height,null);
+
+	}
+
 	// UPDATE BY MIKE
 	private int dx, dy, xloc, yloc;
 	private Rectangle hit;
 
 	//Devang: Updated image
+	// Devang: Updated image
 	public Block(int xSpeed, Image i) {
 		super(xSpeed, "block.png");
 		image = getImage("block.png");
 	}
 
-}
 
+
+}
