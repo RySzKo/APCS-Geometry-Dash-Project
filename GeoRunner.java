@@ -15,6 +15,7 @@ public class GeoRunner {
 	private int ticks, seconds, tempsecs;
 	private double gravity;
 	private boolean jumping;
+	private int time;
 
 
 	public static void main(String[] args) {
@@ -63,23 +64,30 @@ public class GeoRunner {
 				clickedAt(me);
 				panel.repaint();
 			}
+			
+			public void mouseReleased(MouseEvent me) {
+				jumping = false;
+			}
 		});
 
 	}
 
 
 	protected void updateGame() {
-		ticks++;
 		game.move();
+		ticks++;
 		int hurts = 1000/REFRESH_RATE;
 		seconds = (int)ticks/hurts;
-		if(jumping) {
-			gravity = (-60*(ticks - tempsecs)) + 16 * (ticks - tempsecs) * (ticks - tempsecs);
-			System.out.println(gravity);
+		time = ticks/10;
+		if(jumping || game.getPlayer().getRect().getY() < 450) {
+			gravity = (-9*(time - tempsecs)) + 3 * (time - tempsecs) * (time - tempsecs);
+//			System.out.println(gravity);
 			game.movePlayer(gravity);
 			if(game.getPlayer().getRect().getY() >= 450) {
-				jumping = false;
 				game.getPlayer().getRect().setBounds((int) game.getPlayer().getRect().getX(), 450, 50, 50);
+				if(jumping) {
+					tempsecs = time;
+				}
 			}
 		}
 		if(ticks % hurts == 0) {
@@ -90,11 +98,10 @@ public class GeoRunner {
 
 
 	protected void clickedAt(MouseEvent me) {
-		tempsecs = ticks;
+		tempsecs = time;
 		jumping = true;
 		System.out.println("Click Works");
 	}
-
 
 	protected void drawGame(Graphics g) {
 		g.drawLine(0, 500, 2000, 500);

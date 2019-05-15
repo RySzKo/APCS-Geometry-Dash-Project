@@ -6,8 +6,6 @@ public abstract class Obstacle {
 	private Rectangle hitbox;
 	private int xloc;
 	private int yloc;
-	private int width;
-	private int height;
 	private int speed;
 	private final int dim = 50;
 	
@@ -20,6 +18,7 @@ public abstract class Obstacle {
 
 	public void move() {
 		hitbox.translate(speed, 0);
+//		System.out.println("Moved " + speed);
 	}
 	
 	public Rectangle getRect() {
@@ -31,16 +30,16 @@ public abstract class Obstacle {
 	}
 	
 	public int getX() {
-		return xloc;
+		return hitbox.x;
 	}
 	
 	public int getY() {
-		return yloc;
+		return hitbox.y;
 	}
 	
 	public void draw(Graphics g) {
-		g.drawRect(xloc, yloc, 50, 50);
-		g.fillRect(xloc, yloc, 50, 50);
+		g.drawRect(hitbox.x, hitbox.y, 50, 50);
+		g.fillRect(hitbox.x, hitbox.y, 50, 50);
 	}
 
 }

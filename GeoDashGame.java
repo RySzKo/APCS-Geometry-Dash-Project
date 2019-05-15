@@ -11,7 +11,7 @@ public class GeoDashGame {
 	
 	public GeoDashGame() {
 		player = new Dasher();
-		ob1 = new Block(450, 450, -10);
+		Obstacle ob1 = new Block(450, 450, -3);
 		obstacles.add(ob1);
 	}
 	
@@ -26,6 +26,7 @@ public class GeoDashGame {
 	public void move() {
 		for(Obstacle ob: obstacles) {
 			ob.move();
+//			System.out.println("Moved " + ob);
 		}
 	}
 
@@ -34,8 +35,12 @@ public class GeoDashGame {
 		
 	}
 	
-	public void setFloor(Obstacle f) {
-		
+	public int setFloor(Obstacle f) {
+		return f.getY();
+	}
+	
+	public int resetFloor() {
+		return 450;
 	}
 	
 	public Dasher getPlayer() {
