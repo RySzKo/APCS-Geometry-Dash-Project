@@ -95,8 +95,6 @@ public class GeoRunner {
 			System.out.println("diff is " + (ticks - tempsecs));
 		}
 	}
-
-
 	protected void clickedAt(MouseEvent me) {
 		tempsecs = time;
 		jumping = true;

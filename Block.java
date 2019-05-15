@@ -13,8 +13,14 @@ public class Block extends Obstacle {
 		trc = new Point(x + dim, y);
 		blc = new Point(x, y + dim);
 		brc = new Point(x + dim, y + dim);
-	}
+		}
 		
+	public void draw(Graphics g) {
+		//g.drawRect(xval, yval, bx, by);
+	//	g.drawImage(image,xloc, yloc,width, height,null);
+
+	}
+	
 		public boolean isRightBelow(Dasher d) {
 			if(super.getY() <= d.getRect().getY() + 50) {
 				d.getRect().setLocation((int) d.getRect().getX(), super.getY() - 50);

@@ -13,6 +13,7 @@ public class GeoDashGame {
 		player = new Dasher();
 		Obstacle ob1 = new Block(450, 450, -3);
 		obstacles.add(ob1);
+		player = new Dasher();
 	}
 	
 
@@ -26,13 +27,10 @@ public class GeoDashGame {
 	public void move() {
 		for(Obstacle ob: obstacles) {
 			ob.move();
-//			System.out.println("Moved " + ob);
 		}
 	}
-
 	public void movePlayer(double gravity) {
 		player.move(gravity);
-		
 	}
 	
 	public int setFloor(Obstacle f) {
