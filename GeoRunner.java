@@ -25,7 +25,6 @@ public class GeoRunner {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		panel = new JPanel() {
 			@Override
-			
 			public void paintComponent(Graphics g) {
 				super.paintComponent(g);
 				drawGame(g);
@@ -34,7 +33,7 @@ public class GeoRunner {
 			
 		};
 		
-		panel.setBackground(Color.BLUE);
+		panel.setBackground(Color.WHITE);
 		panel.setPreferredSize(new Dimension(800, 600));
 		
 		frame.add(panel);
@@ -69,55 +68,6 @@ public class GeoRunner {
 	protected void updateGame() {
 		ticks++;
 		game.move();
-	}
-
-	private void mapKeyStrokesToActions(JPanel panel) {
-
-		ActionMap map = panel.getActionMap();
-		InputMap inMap = panel.getInputMap();
-
-		
-		inMap.put(KeyStroke.getKeyStroke("UP"), "up");
-		map.put("up", new AbstractAction() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				hit("up");
-				game.player.moveUp();
-			}
-
-			
-		});
-		panel.getInputMap().put(KeyStroke.getKeyStroke("LEFT"),"left");
-		panel.getActionMap().put("left",new AbstractAction(){
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				hit("left");
-				game.player.moveLeft();
-
-			}
-		});
-		
-		panel.getInputMap().put(KeyStroke.getKeyStroke("RIGHT"),"right");
-		panel.getActionMap().put("right",new AbstractAction(){
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				hit("right");
-				game.player.moveRight();
-			}
-		});
-		
-		panel.getInputMap().put(KeyStroke.getKeyStroke("DOWN"),"down");
-		panel.getActionMap().put("down",new AbstractAction(){
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				hit("down");
-				game.player.moveDown(0);
-			}
-		});
-
 	}
 
 	protected void clickedAt(MouseEvent me) {

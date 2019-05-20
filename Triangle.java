@@ -1,68 +1,41 @@
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Rectangle;
 
-import javax.imageio.ImageIO;
+public class Triangle extends Obstacle {
 
-public class Triangle extends Obstacle{
-	
 	private Rectangle hitbox;
-	private int xloc =400, yloc = 450, width=50, height=50;
+	private int xloc = 400, yloc = 450, width = 50, height = 50;
 
 	public Triangle(int xSpeed, Image i) {
-		super(xSpeed, "triangle.png");
+		super();
 		image = getImage("triangle.png");
-		//Devang: added image for obstacles
 		xSpeed = 100;
 		hitbox = new Rectangle(xloc, yloc, 50, 50);
-		
+	}
 
-	}
-	
-	
-	@Override
-	public void move() {
-		hitbox.translate(xloc-100, yloc);
-		System.out.println("Triangle move()...");
-	}
-	
-	public void move(Graphics g,int xloc, int yloc) {
-		hitbox.translate(100, 0);
-		System.out.println("Trangle move(g, x, y)...");
-//		g.clearRect(xloc+100, 450, 51, 50);
-//		g.setColor(Color.BLUE);
-//		g.fillRect(xloc+100, 450, 51, 50);t
-		
+	private int x1;
+	private int y1;
+
+	private int x2;
+	private int y2;
+
+	private int x3;
+	private int y3;
+
+	public Triangle(int x1, int y1, int x2, int y2, int x3, int y3) {
+		this.x1 = x1;
+		this.y1 = y1;
+		this.x2 = x2;
+		this.y2 = y2;
+		this.x3 = x3;
+		this.y3 = y3;
 	}
 
 	public void draw(Graphics g) {
-		//g.drawRect(500, 500, 50, 50);
-		g.drawImage(image,xloc, yloc,width, height,null);
-//		g.drawImage(image, xloc, yloc, width, height, null);
-	}
+		g.drawLine(x1, y1, x2, y2);
+		g.drawLine(x3, y3, x1, y1);
+		g.drawLine(x2, y2, x3, y3);
 
-	
-	
-	
+	}
 }
-
-	
-	
-	
-	/*protected Image getImage(String str) {
-		Image img = null;
-		str = PATH_PREFIX+str;
-		try {
-			
-			img = ImageIO.read(this.getClass().getResource(str));
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return img;
-	}
-	*/
-	
-	
-		

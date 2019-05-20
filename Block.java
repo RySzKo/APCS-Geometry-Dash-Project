@@ -6,23 +6,21 @@ public class Block extends Obstacle {
 
 	Block b;
 	// NEXT FOUR LINES WILL BE DELETED EVENTUALLY
-	int xval = 10;
+	int xval = 500;
 	int yval = 450;
-	int bx = 10;
-	int by = 10;
-	int a = 0;
+	int bx = 50;
+	int by = 50;
 
 	public void draw(Graphics g) {
 		g.drawRect(xval, yval, bx, by);
+		g.fillRect(xval, yval, bx, by);
+
 	}
 
-	// UPDATE BY MIKE
-	private int dx, dy, xloc, yloc;
-	private Rectangle hit;
-
-	// Devang: Updated image
-	public Block(int xSpeed, Image i) {
-		super(xSpeed, "block.png");
-		image = getImage("block.png");
+	public Block(int xval, int yval, int bx, int by) {
+		this.xval = xval;
+		this.yval = yval;
+		this.bx = bx;
+		this.by = by;
 	}
 }
