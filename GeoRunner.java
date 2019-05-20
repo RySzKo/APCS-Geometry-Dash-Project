@@ -12,7 +12,7 @@ public class GeoRunner {
 	private JPanel panel;
 	private GeoDashGame game = new GeoDashGame();
 	private Timer timer;
-	private int ticks, seconds, tempsecs;
+	private int ticks, seconds, tempsecs, floor;
 	private double gravity;
 	private boolean jumping;
 	private int time;
@@ -24,6 +24,7 @@ public class GeoRunner {
 
 
 	private void start() {
+		floor = game.resetFloor();
 		JFrame frame = new JFrame("Geometry Dash");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		panel = new JPanel() {
@@ -79,22 +80,28 @@ public class GeoRunner {
 		int hurts = 1000/REFRESH_RATE;
 		seconds = (int)ticks/hurts;
 		time = ticks/10;
-		if(jumping || game.getPlayer().getRect().getY() < 450) {
+		if(jumping || game.getPlayer().getRect().getY() < floor) {
 			gravity = (-9*(time - tempsecs)) + 3 * (time - tempsecs) * (time - tempsecs);
 //			System.out.println(gravity);
 			game.movePlayer(gravity);
-			if(game.getPlayer().getRect().getY() >= 450) {
-				game.getPlayer().getRect().setBounds((int) game.getPlayer().getRect().getX(), 450, 50, 50);
+			if(game.getPlayer().getRect().getY() >= floor) {
+				game.getPlayer().getRect().setBounds((int) game.getPlayer().getRect().getX(), floor, 50, 50);
 				if(jumping) {
 					tempsecs = time;
 				}
 			}
 		}
+		checkCollisions();
 		if(ticks % hurts == 0) {
 			System.out.println(seconds+" seconds");
-			System.out.println("diff is " + (ticks - tempsecs));
+//			System.out.println("diff is " + (ticks - tempsecs));
 		}
 	}
+	private void checkCollisions() {
+		game.checkCollisions();
+	}
+
+
 	protected void clickedAt(MouseEvent me) {
 		tempsecs = time;
 		jumping = true;

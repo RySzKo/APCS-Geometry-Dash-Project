@@ -4,31 +4,50 @@ import javax.swing.*;
 
 public class Block extends Obstacle {
 	
-	private Point trc, tlc, brc, blc;
 	private final int dim = 50;
 	
 		public Block(int x, int y, int xspeed) {
 		super(x, y, xspeed);
-		tlc = new Point(x, y);
-		trc = new Point(x + dim, y);
-		blc = new Point(x, y + dim);
-		brc = new Point(x + dim, y + dim);
 		}
 		
-	public void draw(Graphics g) {
-		//g.drawRect(xval, yval, bx, by);
-	//	g.drawImage(image,xloc, yloc,width, height,null);
-
-	}
-	
-		public boolean isRightBelow(Dasher d) {
-			if(super.getY() <= d.getRect().getY() + 50) {
-				d.getRect().setLocation((int) d.getRect().getX(), super.getY() - 50);
-				if(brc.x >= d.tlc.x) {
-					
-				}
+		@Override
+		/** If returns 0, dasher dies.
+		 *  If returns 1, dasher lives and sets floor to block top.
+		 *  If returns -1, dasher is not colliding with the block.
+		 */ 
+		public int collidesWith(Dasher d) {
+//			double dashleft = d.getRect().getX(),
+//					dashright = d.getRect().getMaxX(),
+//					dashtop = d.getRect().getY(),
+//					dashbot = d.getRect().getMaxY();
+//			double blocktop = super.getY(),
+//					blockbot = super.getRect().getMaxY(),
+//					blockleft = super.getX(),
+//					blockright = super.getRect().getMaxX();
+//			if(dashright >= blockleft && dashleft <= blockleft) {
+//				if(dashbot <= blocktop) {
+//					return 1;
+//				}
+//				else {
+//					return 0;
+//				}
+//			}
+//			if(dashleft <= blockright && dashright >= blockright) {
+//				if(dashbot < blocktop) {
+//					return 1;
+//				}
+//				else {
+//					return 0;
+//				}
+//			}
+			Rectangle intersection = super.getRect().intersection(d.getRect());
+			if (intersection.width > intersection.height) {
+				return 1;
 			}
-			return false;
-			
+			if (intersection.height >= intersection.width) {
+				return 0;
+			}
+			return -1;
 		}
+		
 }

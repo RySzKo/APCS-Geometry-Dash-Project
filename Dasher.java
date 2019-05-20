@@ -47,7 +47,7 @@ public class Dasher {
 	
 	public void move(double gravity) {
 		rect.translate(0, (int) gravity);
-		System.out.println("Moved " + gravity);
+//		System.out.println("Moved " + gravity);
 	}
 
 }

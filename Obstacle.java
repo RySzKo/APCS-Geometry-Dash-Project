@@ -45,5 +45,9 @@ public abstract class Obstacle {
 		g.fillRect(hitbox.x, hitbox.y, 50, 50);
 	//	g.drawRect(xloc, yloc, width, height);
 	}
+	
+	public int collidesWith(Dasher d) {
+		return 1000;
+	}
 
 }
