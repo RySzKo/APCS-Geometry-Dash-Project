@@ -4,62 +4,51 @@ import java.util.*;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-public abstract class Obstacle {
-	//update by Devang
+public interface Obstacle {
 	
-	public final static String PATH_PREFIX = "obstacleImages/";
-	private Rectangle hitbox;
-	protected Image image;
-	private int speed;
-	private int xloc=600, yloc=450, width=50, height=50;
-
-	public Obstacle() {
-		// TODO Auto-generated constructor stub
-	}
-
-
-
-	protected  Image getImage(String fn) {
-		Image img = null;
-		fn = PATH_PREFIX+fn;
-		try {
-			
-			img = ImageIO.read(this.getClass().getResource(fn));
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return img;
-	}
-	
-	
-	
-/*	public Obstacle(int xspeed) {
-		speed = xspeed;
-		hitbox = new Rectangle(xloc, yloc, width, height);
-	}
-	
-	
-
-	public Obstacle(int xSpeed, String str) {
-		xSpeed = 100;
-		hitbox = new Rectangle(xloc, yloc, width, height);
-	}
-*/	
-	
-	public void move() {
-		hitbox.translate(speed, 0);
-	}
-	
-
-	public void moveObjects() {
-		this.hitbox.translate(0, -50);
-	}
-
-
-
-	public void draw(Graphics g) {
-		// TODO Auto-generated method stub
+	public int defaultDim = 50;
+	/**
+	 * Move left at speed speed.
+	 */
+	public void move(int speed);
 		
-	}
+	/**
+	 * Return Width.
+	 */
+	public double getWidth();
+	
+	/**
+	 * Return Height.
+	 */
+	public double getHeight();
+	
+	/**
+	 * 
+	 * @return X location of bounds box
+	 */
+	public int getX();
+	
+	/**
+	 * 
+	 * @return Y location of bounds box
+	 */
+	public int getY();
+	
+	/**
+	 * draw.
+	 * @param g
+	 */
+	public void draw(Graphics g);
+	
+	/** 
+	 * If returns 0, dasher dies.
+	 *  If returns 1, dasher lives and sets floor to block top.
+	 *  If returns -1, dasher is not colliding with the block.
+	 */ 
+	public int collidesWith(Dasher d);
+
+	double getDim();
+
 }
+
+
